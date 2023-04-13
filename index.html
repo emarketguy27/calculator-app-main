@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Calculator app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main>
+      <div class="title-theme"></div>
+      <div class="main-display">
+        <header>
+          <h1 title="calc">Calc</h1>
+          <div class="switch-wrapper">
+            <small>THEME</small>
+            <div class="theme">
+              <small>1 2 3</small>
+              <div class="switch-container switch">
+                <p id="theme-label"></p>
+                <div class="tri-state-toggle slider-round">
+                  <input
+                    class="tgl-button"
+                    type="radio"
+                    name="toggle"
+                    id="one"
+                  />
+                  <input
+                    class="tgl-button"
+                    type="radio"
+                    name="toggle"
+                    id="two"
+                  />
+                  <input
+                    class="tgl-button"
+                    type="radio"
+                    name="toggle"
+                    id="three"
+                  />
+                </div>
+                <!-- <label class="switch">
+                  <input type="checkbox" />
+                  <span class="slider round"></span>
+                </label> -->
+              </div>
+            </div>
+          </div>
+        </header>
+        <input class="display-screen" type="text" id="result" readonly />
+        <div class="main-keys">
+          <button class="numbers">7</button>
+          <button class="numbers">8</button>
+          <button class="numbers">9</button>
+          <button id="delete-btn">DEL</button>
+          <button class="numbers">4</button>
+          <button class="numbers">5</button>
+          <button class="numbers">6</button>
+          <button id="plus-btn">+</button>
+          <button class="numbers">1</button>
+          <button class="numbers">2</button>
+          <button class="numbers">3</button>
+          <button id="minus-btn">-</button>
+          <button class="numbers">.</button>
+          <button class="numbers">0</button>
+          <button id="divide-btn">/</button>
+          <button id="multiply-btn">*</button>
+          <button class="big-keys" id="reset">RESET</button>
+          <button class="big-keys" id="equals">=</button>
+        </div>
+      </div>
+
+      <!-- Toggle Button  -->
+      <!-- <div class="tri-state-toggle">
+        <input class="tgl-button" type="radio" name="toggle" id="one" />
+        <input class="tgl-button" type="radio" name="toggle" id="two" />
+        <input class="tgl-button" type="radio" name="toggle" id="three" />
+      </div> -->
+    </main>
+
+    <script src="calc.js"></script>
+  </body>
+</html>

@@ -1,0 +1,310 @@
+/* ### Theme 2
+
+#### Backgrounds
+
+- Light gray (main background): hsl(0, 0%, 90%)
+- Grayish red (toggle background, keypad background): hsl(0, 5%, 81%)
+- Very light gray (screen background): hsl(0, 0%, 93%)
+
+#### Keys
+
+- Dark moderate cyan (key background): hsl(185, 42%, 37%)
+- Very dark cyan (key shadow): hsl(185, 58%, 25%)
+
+- Orange (key background, toggle): hsl(25, 98%, 40%)
+- Dark orange (key shadow): hsl(25, 99%, 27%)
+
+- Light grayish yellow (key background): hsl(45, 7%, 89%)
+- Dark grayish orange (key shadow): hsl(35, 11%, 61%)
+
+#### Text
+
+- Very dark grayish yellow: hsl(60, 10%, 19%)
+- White (text): hsl(0, 0%, 100%)
+
+### Theme 3
+
+#### Backgrounds
+
+- Very dark violet (main background): hsl(268, 75%, 9%)
+- Very dark violet (toggle background, keypad background, screen background): hsl(268, 71%, 12%)
+
+#### Keys
+
+- Dark violet (key background): hsl(281, 89%, 26%)
+- Vivid magenta (key shadow): hsl(285, 91%, 52%)
+
+- Pure cyan (key background, toggle): hsl(176, 100%, 44%)
+- Soft cyan (key shadow): hsl(177, 92%, 70%)
+
+- Very dark violet (key background): hsl(268, 47%, 21%)
+- Dark magenta (key shadow): hsl(290, 70%, 36%)
+
+#### Text
+
+- Light yellow: hsl(52, 100%, 62%)
+- Very dark blue: hsl(198, 20%, 13%)
+- White (text): hsl(0, 0%, 100%) */
+
+:root {
+  /* ## Colors */
+
+  /* ### Theme 1 */
+
+  /* #### Backgrounds */
+
+  --mainbackground: hsl(222, 26%, 31%);
+  --keypadbackground: hsl(223, 31%, 20%);
+  --screenbackground: hsl(224, 36%, 15%);
+
+  /* #### Keys */
+
+  --keybackground: hsl(225, 21%, 49%);
+  --bl-keyshadow: hsl(224, 28%, 35%);
+
+  --redkeybgtoggle: hsl(6, 63%, 50%);
+  --red-keyshadow: hsl(6, 70%, 34%);
+
+  --orangekeybg: hsl(30, 25%, 89%);
+  --orangekeyshadow: hsl(28, 16%, 65%);
+
+  /* #### Text */
+
+  --darkblue: hsl(221, 14%, 31%);
+  --White: hsl(0, 0%, 100%);
+}
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  color: white;
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+  background-color: var(--mainbackground);
+}
+main {
+  max-width: 500px;
+  background-color: transparent;
+  padding: 1rem;
+  margin: 1em auto;
+  border-radius: 0.5rem;
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  align-content: center;
+  align-items: center;
+}
+.switch-wrapper {
+  width: 150px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+}
+.theme {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  text-align: right;
+  height: 50px;
+  gap: 0.2rem;
+}
+.theme small {
+  text-align: right;
+  font-size: 0.7rem;
+  letter-spacing: 6px;
+}
+.switch-container {
+  display: flex;
+}
+.switch {
+  position: relative;
+  display: flex;
+  text-align: center;
+  width: 60px;
+  height: 20px;
+}
+header small {
+  font-size: 0.5rem;
+  letter-spacing: 3px;
+  padding: 0;
+  margin: 0;
+}
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--keypadbackground);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--redkeybgtoggle);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+h1 {
+  font-size: 1.35rem;
+  margin: 0;
+}
+
+#result {
+  font-family: "League Spartan", sans-serif;
+  background-color: var(--screenbackground);
+  color: white;
+  border: none;
+  text-align: right;
+  font-size: 2.5rem;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.4rem;
+}
+.main-display {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  font-size: 2.5rem;
+}
+.main-keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  background-color: var(--keypadbackground);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+button {
+  border: none;
+  border-radius: 0.4rem;
+  text-align: center;
+  font-family: "League Spartan", sans-serif;
+  font-size: 1.8rem;
+  font-weight: bolder;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.418);
+  color: var(--darkblue);
+  padding: 0.6rem 0.8rem;
+  box-shadow: 0px 3px 4px var(--orangekeyshadow);
+  cursor: pointer;
+  transition: 0.1s;
+}
+button:hover {
+  background-color: white;
+  text-shadow: none;
+}
+#delete-btn {
+  font-size: 1.2rem;
+  background-color: var(--keybackground);
+  border: none;
+  color: white;
+  box-shadow: 0px 3px 4px var(--bl-keyshadow);
+}
+#delete-btn:hover {
+  background-color: var(--keybackground);
+  opacity: 0.9;
+}
+#reset {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  background-color: var(--keybackground);
+  border: none;
+  color: white;
+  box-shadow: 0px 3px 4px var(--bl-keyshadow);
+}
+#reset:hover {
+  background-color: var(--keybackground);
+  opacity: 0.9;
+}
+#equals {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--redkeybgtoggle);
+  border: none;
+  color: white;
+  box-shadow: 0px 3px 4px var(--red-keyshadow);
+}
+#equals:hover {
+  background-color: var(--redkeybgtoggle);
+  opacity: 0.9;
+}
+.big-keys {
+  display: flex;
+  margin: 1rem auto;
+  padding: ;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+}
+.big-keys button {
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 1.4rem;
+  padding: 1rem 1rem;
+  width: 50%;
+  text-align: center;
+  border: 1px solid;
+}
+/* Toggle switch */
+.tri-state-toggle input {
+  height: 14px;
+  width: 14px;
+  appearance: none;
+  background-color: var(--redkeybgtoggle);
+  border-radius: 10px;
+  opacity: 0;
+}
+.tri-state-toggle input:hover {
+  cursor: pointer;
+}
+.tri-state-toggle {
+  width: 100%;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  background-color: var(--keypadbackground);
+  border-radius: 10px;
+}
+#one {
+  opacity: 1;
+}
