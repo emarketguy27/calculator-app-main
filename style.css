@@ -86,12 +86,9 @@ body {
   background-color: var(--mainbackground);
 }
 main {
-  max-width: 500px;
   background-color: transparent;
-  padding: 1rem;
   margin: 1em auto;
   border-radius: 0.5rem;
-  width: 60vw;
   display: flex;
   flex-direction: column;
 }
@@ -190,25 +187,24 @@ h1 {
   color: white;
   border: none;
   text-align: right;
-  font-size: 2.5rem;
-  padding: 1.5rem;
+  font-size: 3rem;
+  padding: 2rem;
   margin-bottom: 1rem;
   border-radius: 0.4rem;
 }
 .main-display {
-  padding: 1rem;
   display: flex;
   flex-direction: column;
-  border-radius: 0.5rem;
-  font-size: 2.5rem;
 }
 .main-keys {
+  height: 60vh;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  gap: 1.5rem;
   background-color: var(--keypadbackground);
   border-radius: 0.5rem;
-  padding: 1rem;
+  padding: 1.5rem;
+  margin-top: 1rem;
 }
 button {
   border: none;
